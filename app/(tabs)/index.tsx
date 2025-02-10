@@ -3,16 +3,11 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      {/* Логотип или изображение */}
       <Image 
         source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }} 
         style={styles.image}
-      />
-      
-      {/* Новый стилизованный текст */}
+      />    
       <Text style={styles.title}>🌟 Создавай. Исследуй. Вдохновляй.</Text>
-
-      {/* Цитата */}
       <Text style={styles.quote}>
         «Каждое великое приложение начинается с одной строки кода.»
       </Text>
@@ -25,12 +20,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f0f4f8', // Мягкий фон
+    backgroundColor: '#f0f4f8', 
     padding: 20,
   },
   image: {
-    width: 100,
-    height: 100,
+    width: 250,
+    height:  250,
     marginBottom: 20,
   },
   title: {

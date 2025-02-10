@@ -1,0 +1,35 @@
+name: Build and Deploy Expo Project
+
+on:
+  push:
+    branches: 
+      - main # Основная ветка для сборки
+      - develop # Дополнительная ветка для сборки (если требуется)
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    # Проверка кода из репозитория
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Установить Node.js
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18 # Совместимая версия Node.js
+
+    # Установить Expo CLI
+    - name: Install Expo CLI
+      run: npm install --global expo-cli
+
+    # Установить зависимости
+    - name: Install project dependencies
+      run: npm install
+
+    # Запуск Expo в режиме разработки
+    - name: Start Expo in development mode
+      run: |
+        npx expo start --tunnel
